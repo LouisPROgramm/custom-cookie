@@ -1,0 +1,14 @@
+{
+  "name": "cookie-simulator",
+  "version": "1.0.0",
+  "description": "A modern cookie simulator game",
+  "main": "game.js",
+  "scripts": {
+    "start": "live-server",
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

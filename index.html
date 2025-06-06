@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Cookie Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="customization-container">
+            <div class="customization-section">
+                <h3>Customize Cookie</h3>
+                <input type="text" id="cookieImageUrl" placeholder="Enter cookie image URL" class="custom-input">
+                <input type="text" id="clickSoundUrl" placeholder="Enter click sound URL" class="custom-input">
+            </div>
+            <div class="customization-section">
+                <h3>Customize Shop Items</h3>
+                <div class="shop-customization">
+                    <input type="text" id="cursorImageUrl" placeholder="Cursor image URL" class="custom-input">
+                    <input type="text" id="cursorSoundUrl" placeholder="Cursor sound URL" class="custom-input">
+                </div>
+                <div class="shop-customization">
+                    <input type="text" id="grandmaImageUrl" placeholder="Grandma image URL" class="custom-input">
+                    <input type="text" id="grandmaSoundUrl" placeholder="Grandma sound URL" class="custom-input">
+                </div>
+                <div class="shop-customization">
+                    <input type="text" id="farmImageUrl" placeholder="Farm image URL" class="custom-input">
+                    <input type="text" id="farmSoundUrl" placeholder="Farm sound URL" class="custom-input">
+                </div>
+                <div class="shop-customization">
+                    <input type="text" id="factoryImageUrl" placeholder="Factory image URL" class="custom-input">
+                    <input type="text" id="factorySoundUrl" placeholder="Factory sound URL" class="custom-input">
+                </div>
+                <div class="shop-customization">
+                    <input type="text" id="mineImageUrl" placeholder="Mine image URL" class="custom-input">
+                    <input type="text" id="mineSoundUrl" placeholder="Mine sound URL" class="custom-input">
+                </div>
+            </div>
+        </div>
+
+        <div class="cookie-container">
+            <div id="cookie" class="cookie">
+                <img id="customCookieImage" src="assets/cookie.png" alt="Cookie" class="cookie-image">
+            </div>
+            <div class="cookie-counter">Cookies: <span id="cookieCount">0</span></div>
+        </div>
+
+        <div class="shop-container">
+            <h2>Shop</h2>
+            <div id="shopItems" class="shop-items">
+                <!-- Shop items will be dynamically added here -->
+            </div>
+        </div>
+
+        <div class="gamble-container">
+            <h2>Gamble System</h2>
+            <button id="gambleButton" class="gamble-button">Gamble Cookies</button>
+            <div id="gambleResult" class="gamble-result"></div>
+        </div>
+
+        <div class="rebirth-container">
+            <h2>Rebirth System</h2>
+            <button id="rebirthButton" class="rebirth-button">Rebirth</button>
+            <div id="rebirthInfo" class="rebirth-info">Rebirth Cost: <span id="rebirthCost">1000</span></div>
+        </div>
+
+        <div class="stats-container">
+            <h2>Statistics</h2>
+            <div class="stat">Total Cookies: <span id="totalCookies">0</span></div>
+            <div class="stat">Rebirths: <span id="rebirthCount">0</span></div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

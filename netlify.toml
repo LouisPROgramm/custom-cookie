@@ -1,0 +1,12 @@
+[build]
+  base = "/"
+  publish = "/"
+
+[build.environment]
+  NODE_VERSION = "18.0.0"
+
+[context.production]
+  command = "npm run build"
+
+[context.production.environment]
+  NODE_ENV = "production"
