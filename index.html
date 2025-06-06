@@ -14,29 +14,6 @@
                 <input type="text" id="cookieImageUrl" placeholder="Enter cookie image URL" class="custom-input">
                 <input type="text" id="clickSoundUrl" placeholder="Enter click sound URL" class="custom-input">
             </div>
-            <div class="customization-section">
-                <h3>Customize Shop Items</h3>
-                <div class="shop-customization">
-                    <input type="text" id="cursorImageUrl" placeholder="Cursor image URL" class="custom-input">
-                    <input type="text" id="cursorSoundUrl" placeholder="Cursor sound URL" class="custom-input">
-                </div>
-                <div class="shop-customization">
-                    <input type="text" id="grandmaImageUrl" placeholder="Grandma image URL" class="custom-input">
-                    <input type="text" id="grandmaSoundUrl" placeholder="Grandma sound URL" class="custom-input">
-                </div>
-                <div class="shop-customization">
-                    <input type="text" id="farmImageUrl" placeholder="Farm image URL" class="custom-input">
-                    <input type="text" id="farmSoundUrl" placeholder="Farm sound URL" class="custom-input">
-                </div>
-                <div class="shop-customization">
-                    <input type="text" id="factoryImageUrl" placeholder="Factory image URL" class="custom-input">
-                    <input type="text" id="factorySoundUrl" placeholder="Factory sound URL" class="custom-input">
-                </div>
-                <div class="shop-customization">
-                    <input type="text" id="mineImageUrl" placeholder="Mine image URL" class="custom-input">
-                    <input type="text" id="mineSoundUrl" placeholder="Mine sound URL" class="custom-input">
-                </div>
-            </div>
         </div>
 
         <div class="cookie-container">
@@ -55,7 +32,10 @@
 
         <div class="gamble-container">
             <h2>Gamble System</h2>
-            <button id="gambleButton" class="gamble-button">Gamble Cookies</button>
+            <div class="gamble-input">
+                <input type="number" id="gambleAmount" min="1" placeholder="Enter amount to gamble">
+                <button id="gambleButton" class="gamble-button">Gamble Cookies</button>
+            </div>
             <div id="gambleResult" class="gamble-result"></div>
         </div>
 
@@ -65,10 +45,22 @@
             <div id="rebirthInfo" class="rebirth-info">Rebirth Cost: <span id="rebirthCost">1000</span></div>
         </div>
 
-        <div class="stats-container">
-            <h2>Statistics</h2>
-            <div class="stat">Total Cookies: <span id="totalCookies">0</span></div>
-            <div class="stat">Rebirths: <span id="rebirthCount">0</span></div>
+        <div class="footer">
+            <div class="footer-buttons">
+                <a href="https://discord.gg/FAzUddCqSN" target="_blank" class="discord-button">
+                    <img src="https://discord.com/assets/322c936a8c8be1b803cd9cb8cecd905a.png" alt="Discord" class="discord-logo">
+                </a>
+                <button id="creditsButton" class="credits-button">Credits</button>
+            </div>
+        </div>
+
+        <div id="creditsModal" class="modal">
+            <div class="modal-content">
+                <h2>Credits</h2>
+                <p>Made by Louis</p>
+                <p>Version: 1.0.5</p>
+                <button id="closeModal">Close</button>
+            </div>
         </div>
     </div>
     <script src="game.js"></script>
