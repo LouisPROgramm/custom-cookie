@@ -19,41 +19,49 @@ class CookieSimulator {
         this.totalCookies = 0;
         this.rebirths = 0;
         this.rebirthCost = 1000;
+        this.totalCPS = 0;
+        this.sounds = {
+            click: new Audio(this.defaultUrls.sounds.click),
+            purchase: new Audio(this.defaultUrls.sounds.purchase),
+            gambleWin: new Audio(this.defaultUrls.sounds.gambleWin),
+            gambleLose: new Audio(this.defaultUrls.sounds.gambleLose),
+            rebirth: new Audio(this.defaultUrls.sounds.rebirth)
+        };
         this.shopItems = [
             { 
                 name: 'Cursor', 
                 cost: 15, 
                 cps: 0.1,
-                image: this.defaultUrls.shopItems.cursor.image,
-                sound: this.defaultUrls.shopItems.cursor.sound
+                image: this.defaultUrls.cookie.image,
+                sound: this.defaultUrls.sounds.click
             },
             { 
                 name: 'Grandma', 
                 cost: 100, 
                 cps: 1,
-                image: this.defaultUrls.shopItems.grandma.image,
-                sound: this.defaultUrls.shopItems.grandma.sound
+                image: this.defaultUrls.cookie.image,
+                sound: this.defaultUrls.sounds.click
             },
             { 
                 name: 'Farm', 
                 cost: 1100, 
                 cps: 8,
-                image: this.defaultUrls.shopItems.farm.image,
-                sound: this.defaultUrls.shopItems.farm.sound
+                image: this.defaultUrls.cookie.image,
+                sound: this.defaultUrls.sounds.click
             },
             { 
                 name: 'Factory', 
                 cost: 12000, 
                 cps: 50,
-                image: this.defaultUrls.shopItems.factory.image,
-                sound: this.defaultUrls.shopItems.factory.sound
+                image: this.defaultUrls.cookie.image,
+                sound: this.defaultUrls.sounds.click
             },
             { 
                 name: 'Mine', 
                 cost: 130000, 
-                cps: 300,
-                image: this.defaultUrls.shopItems.mine.image,
-                sound: this.defaultUrls.shopItems.mine.sound
+                cps: 400,
+                image: this.defaultUrls.cookie.image,
+                sound: this.defaultUrls.sounds.click
             }
         ];
         this.purchasedItems = {};
@@ -211,26 +219,6 @@ class CookieSimulator {
             this.updateDisplay();
         }
     };
-
-    startCookieProduction() {
-        setInterval(() => {
-            this.cookies += this.cps;
-            this.totalCookies += this.cps;
-            this.updateDisplay();
-        }, 1000);
-    };
-
-    updateDisplay() {
-        document.getElementById('cookieCount').textContent = this.formatNumber(this.cookies);
-        document.getElementById('totalCookies').textContent = this.formatNumber(this.totalCookies);
-        document.getElementById('rebirthCount').textContent = this.rebirths;
-        document.getElementById('rebirthCost').textContent = this.formatNumber(this.rebirthCost);
-
-        // Update shop item counts
-        this.shopItems.forEach(item => {
-            const button = document.querySelector(`button[onclick*="'${item.name}'"]`);
-            if (button) {
-                button.disabled = this.cookies < item.cost;
             }
         });
     };
